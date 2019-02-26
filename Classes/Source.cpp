@@ -25,7 +25,7 @@ using namespace std;
 				  //------------------------
 				  // Displaying Shop
 				  //------------------------
-#define draw 	cout << BOLD << YELLOW << " ID "<< BLUE <<"|"<< WHITE <<"  Stock  "<< BLUE <<"|"<< WHITE <<"   Item   "<< BLUE <<"|"<< GREEN <<"  Price  "<< BLUE <<"|"<< RED <<"  Sell  "<< BLUE <<"|"<< WHITE <<" Bal: $" << player.gold << BLUE << " |" WHITE <<" Round: " << score << "\n";	cout << PURPLE <<"___________________________________________" << endl;	for (int i = 0; i < total - 1; i++)	{		cout << " " << YELLOW << i << BLUE << "  |	" << WHITE << shop.quantity[i] << "	 " << WHITE << shop.item[i] <<  GREEN << "	    $" << shop.price[i] << RED << "	      $" << shop.sellPrice[i] << "\n"; 	cout << PURPLE <<"___________________________________________" << endl;}	cout << " " << YELLOW << total - 1 << BLUE << "  |	" << WHITE << shop.quantity[total - 1] << "	 " << WHITE << shop.item[total - 1] << GREEN << "	    $" << shop.price[total - 1] << RED << "     $" << shop.sellPrice[total - 1] << "\n"; 	cout << PURPLE << "___________________________________________" << RESET << endl;
+#define draw 	cout << BOLD << YELLOW << " ID "<< BLUE <<"|"<< WHITE <<"  Stock  "<< BLUE <<"|"<< WHITE <<"   Item   "<< BLUE <<"|"<< GREEN <<"  Price  "<< BLUE <<"|"<< RED <<"  Sell  "<< BLUE <<"|"<< WHITE <<" Bal: $" << player.gold << BLUE << " |" WHITE <<" Round: " << score <<  "\n";	cout << PURPLE <<"___________________________________________" << endl;	for (int i = 0; i < total - 1; i++)	{		cout << " " << YELLOW << i << BLUE << "  |	" << WHITE << shop.quantity[i] << "	 " << WHITE << shop.item[i] <<  GREEN << "	    $" << shop.price[i] << RED << "	      $" << shop.sellPrice[i] << "\n"; 	cout << PURPLE <<"___________________________________________" << endl;}	cout << " " << YELLOW << total - 1 << BLUE << "  |	" << WHITE << shop.quantity[total - 1] << "	 " << WHITE << shop.item[total - 1] << GREEN << "	    $" << shop.price[total - 1] << RED << "     $" << shop.sellPrice[total - 1] << "\n"; 	cout << PURPLE << "___________________________________________" << RESET << "\nStock Limit: 10";
 				 
 				  //------------------------
 				  // Learing screen and displaying shop
@@ -221,7 +221,7 @@ int main()
 				cin >> buffer[0];
 				buffer[2] = prices(buffer[0], NULL);
 				clear
-			} while (buffer[0] >= total || player.gold < buffer[2]);
+			} while (buffer[0] >= total || player.gold < buffer[2] || shop.quantity[buffer[0]] >= 10 );
 
 
 			do													//Getting Amount from player
